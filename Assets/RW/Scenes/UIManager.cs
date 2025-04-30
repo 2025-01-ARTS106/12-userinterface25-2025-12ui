@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Animator startButton;
     public Animator settingsButton;
     public Animator dialog;
+    public Animator contentPanel;
     public void SettingsButton()
     { startButton.SetBool("IsHidden", true);
     settingsButton.SetBool("IsHidden",true);
@@ -20,5 +21,9 @@ public class UIManager : MonoBehaviour
     { startButton.SetBool("Ishidden", false);
         settingsButton.SetBool("IsHidden", false);
         dialog.SetBool("IsHidden", true);
+    }
+    public void ToggleMenu()
+    { bool IsHidden = contentPanel.GetBool("IsHidden");
+        contentPanel.SetBool("IsHidden", !IsHidden);
     }
 }
